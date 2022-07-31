@@ -1,1 +1,61 @@
+<html>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://www.math.uwaterloo.ca/~pkates/LT3/jsdemos/popcornjs/popcorn.js"></script>
+</html>
+<body>
+    <div class="main">
+    </div>
+    <div class="video-container">
+        <img src="assets/images/play.webp" class="play" id="play">
+        <div class="video-container-inner">
+            <div class="frame"></div>
+            <div class="video-container-flip-item" id="flip-item">
+                <div class="info">
+                    <div style="margin: 0 auto">
+                        <p>
+                            Kính mời Quý Anh/Chị đến dự tiệc cưới của
+                        </p>
+                        <p class="names">
+                            Bùi Anh Dũng & Đặng Hoàng Ngân
+                        </p>
+                        <p class="address">
+                            Vào hồi 11 giờ 00'
+                            <br>
+                            <i>THỨ SÁU, ngày 23 tháng 9, 2022</i>
+                            <br>
+                            <b>TẠI: TRỐNG ĐỒNG PALACE CẢNH HỒ</b>
+                            <br>
+                            173B Trường Trinh, Khương Mai, Quận Thanh Xuân, Hà Nội
+                        </p>
+                        <p class="action-items">
+                            <span class="button" style="background-image: url(assets/images/maps.jpg)">
+                                <a href="">Xem bản đồ</a>
+                            </span>
+                            <span class="button" style="background-image: url(assets/images/calendar.png)">
+                                <a href="">Thêm vào lịch</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <video id="vid" poster="assets/images/thumbnail_1.png">
+                    <source src="assets/videos/wedding.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
 
+    <script type="text/javascript">
+        const playBtn = document.getElementById("play");
+        const vid = document.getElementById("vid");
+
+        playBtn.addEventListener("click", (event) => {
+            playBtn.classList.add("clicked");
+            setTimeout(() => {
+                vid.play();
+            }, 750);
+        });
+        vid.addEventListener("ended", (event) => {
+            document.getElementById("flip-item").classList.add("flipped");
+        });
+    </script>
+</body>
