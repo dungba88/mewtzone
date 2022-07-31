@@ -14,7 +14,6 @@
 }
 
 body {
-    overflow: hidden;
     background: #333;
     margin: 0;
 }
@@ -123,6 +122,11 @@ body {
     animation: button-clicked 1s ease-in-out forwards;
 }
 
+.video-container-box {
+    position: relative;
+    display: inline-block;
+}
+
 @keyframes button-clicked {
     0% {
         opacity: 1;
@@ -146,3 +150,42 @@ body {
         visibility: hidden;
     }
 }
+
+@media (orientation:portrait) {
+
+    body {
+        background-color: white;
+    }
+
+    .info {
+        transform: none;
+        background-color: white;
+        font-size: 40px;
+        height: auto;
+    }
+
+    .info .names {
+        font-size: 50px;
+    }
+
+    .button {
+        padding: 0 0 0 50px;
+    }
+
+    .info .action-items {
+        font-size: 40px;
+    }
+
+    .video-container-flip-item.flipped {
+        transform: none;
+    }
+
+    p {
+        margin-block: 0;
+    }
+
+    .frame {
+        background-image: none;
+    }
+}
+ 
