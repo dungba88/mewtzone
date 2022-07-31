@@ -80,6 +80,7 @@ body {
     color: #8B937D;
     display: flex;
     align-items: center;
+    line-height: 2.5;
 }
 
 .info .names {
@@ -87,10 +88,6 @@ body {
     font-weight: bold;
     font-size: 30px;
     color: #E2B392;
-}
-
-.info .address {
-    line-height: 2.5;
 }
 
 .info .action-items {
