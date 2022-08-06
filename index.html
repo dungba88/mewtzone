@@ -50,14 +50,16 @@
 
         playBtn.addEventListener("click", (event) => {
             playBtn.classList.add("clicked");
-            setTimeout(() => {
+            // request fullscreen in landscape mode
+            if (window.innerHeight < window.innerWidth) {
                 document.getElementById("container").requestFullscreen();
+            }
+            setTimeout(() => {
                 vid.play();
                 vid.setAttribute("controls","controls");
             }, 750);
         });
         vid.addEventListener("ended", (event) => {
-            vid.removeAttribute("controls");
             document.getElementById("flip-item").classList.add("flipped");
         });
     </script>

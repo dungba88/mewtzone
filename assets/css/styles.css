@@ -1,11 +1,6 @@
 @font-face {
-    font-family: heavenly;
-    src: url(../fonts/SVN-Heavenly.otf);
-}
-
-@font-face {
-    font-family: rouge-script;
-    src: url(../fonts/RougeScript-Regular.ttf);
+    font-family: vfwedding01;
+    src: url(../fonts/utm_edwardian.TTF);
 }
 
 @font-face {
@@ -14,11 +9,11 @@
 }
 
 body {
-    background: #333;
     margin: 0;
 }
 
 .video-container {
+    background: white;
     position: relative;
     text-align: center;
     width: 100%;
@@ -81,13 +76,15 @@ body {
     display: flex;
     align-items: center;
     line-height: 2.5;
+    backface-visibility: hidden;
 }
 
 .info .names {
-    font-family: voll-korn;
+    font-family: vfwedding01;
     font-weight: bold;
     font-size: 30px;
-    color: #E2B392;
+    line-height: normal;
+    color: red;
 }
 
 .info .action-items {
@@ -127,6 +124,7 @@ body {
     position: relative;
     display: inline-block;
     max-height: 100%;
+    backface-visibility: hidden;
 }
 
 @keyframes button-clicked {
@@ -169,6 +167,7 @@ body {
 
     .info .names {
         font-size: 50px;
+        line-height: 2.5;
     }
 
     .button {
