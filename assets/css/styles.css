@@ -1,6 +1,17 @@
 @font-face {
-    font-family: vfwedding01;
+    font-family: utm-edwardian;
     src: url(../fonts/utm_edwardian_kt.TTF);
+}
+
+@font-face {
+    font-family: utm-edwardian;
+    font-weight: bold;
+    src: url(../fonts/utm_edwardian_b.TTF);
+}
+
+@font-face {
+    font-family: utm-fleur;
+    src: url(../fonts/utm_wedding.TTF);
 }
 
 @font-face {
@@ -80,11 +91,18 @@ body {
 }
 
 .info .names {
-    font-family: vfwedding01;
-    font-weight: bold;
+    font-family: utm-edwardian;
     font-size: 30px;
     line-height: normal;
     color: red;
+}
+
+.info .names.bold {
+    font-weight: bold;
+}
+
+.info .names.fleur {
+    font-family: utm-fleur;
 }
 
 .info .action-items {
