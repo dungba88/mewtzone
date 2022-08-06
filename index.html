@@ -45,6 +45,7 @@
     </div>
 
     <script type="text/javascript">
+        const container = document.getElementById("container");
         const playBtn = document.getElementById("play");
         const vid = document.getElementById("vid");
 
@@ -60,13 +61,13 @@
         playBtn.addEventListener("click", (event) => {
             playBtn.classList.add("clicked");
             // request fullscreen in landscape mode
-            if (window.innerHeight < window.innerWidth) {
-                document.getElementById("container").requestFullscreen();
-            }
             setTimeout(() => {
                 vid.play();
                 vid.setAttribute("controls", "controls");
             }, 750);
+            if (window.innerHeight < window.innerWidth && container.requestFullscreen) {
+                container.requestFullscreen();
+            }
         });
         vid.addEventListener("ended", (event) => {
             document.getElementById("flip-item").classList.add("flipped");
