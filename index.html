@@ -16,26 +16,26 @@
                 <div class="info">
                     <div style="margin: 0 auto">
                         <p>
-                            Kính mời <span id="guest">Quý Anh/Chị</span> đến dự tiệc cưới của
+                            <span id="text1">Kính mời</span> <span id="guest">Quý Anh/Chị</span> <span id="text2">đến dự tiệc cưới của</span>
                         </p>
-                        <p class="names">
+                        <p id="names" class="names">
                             Bùi Anh Dũng & Đặng Hoàng Ngân
                         </p>
                         <p class="address">
-                            Vào hồi 11 giờ 00'
+                            <span id="text3">Vào hồi 11 giờ 00'</span>
                             <br>
-                            <i>THỨ SÁU, ngày 23 tháng 9, 2022</i>
+                            <span id="text4"><i>THỨ SÁU, ngày 23 tháng 9, 2022</i></span>
                             <br>
-                            <b>TẠI: TRỐNG ĐỒNG PALACE CẢNH HỒ</b>
+                            <b id="text5">TẠI: TRỐNG ĐỒNG PALACE CẢNH HỒ</b>
                             <br>
-                            173B Trường Chinh, Khương Mai, Quận Thanh Xuân, Hà Nội
+                            <span id="text6">173B Trường Chinh, Khương Mai,<br>Quận Thanh Xuân, Hà Nội</span>
                         </p>
                         <p class="action-items">
                             <span class="button" style="background-image: url(assets/images/maps.png)">
-                                <a href="https://goo.gl/maps/HKofkGEhiU2wNcEZA" target="_blank">Xem bản đồ</a>
+                                <a id="text7" href="https://goo.gl/maps/HKofkGEhiU2wNcEZA" target="_blank">Xem bản đồ</a>
                             </span>
                             <span class="button" style="background-image: url(assets/images/calendar.png)">
-                                <a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MzU5ZmJtYm82NW5ldGJiOWQyaDIxaGxhZDAgM205ZzFxdW5sdm5mMDhlaTBwZjZjMHAwN2tAZw&tmsrc=3m9g1qunlvnf08ei0pf6c0p07k%40group.calendar.google.com" target="_blank">Thêm vào lịch</a>
+                                <a id="text8" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MzU5ZmJtYm82NW5ldGJiOWQyaDIxaGxhZDAgM205ZzFxdW5sdm5mMDhlaTBwZjZjMHAwN2tAZw&tmsrc=3m9g1qunlvnf08ei0pf6c0p07k%40group.calendar.google.com" target="_blank">Thêm vào lịch</a>
                             </span>
                         </p>
                     </div>
@@ -45,6 +45,21 @@
     </div>
 
     <script type="text/javascript">
+        const langs = {
+            "ja": {
+                "text1": "私たちは",
+                "guest": "あなた",
+                "text2": "を私たちの結婚式に<br>ご招待いたします",
+                "text3": "日時：午前１１時",
+                "text4": "令和４年９月２３日（金）",
+                "text5": "場所：TRONG DONG PALACE CANH HO",
+                "text6": "ベトナム、ハノイ市<br>タイン スアン区チュオン チン１７３B",
+                "text7": "地図で見る",
+                "text8": "カレンダーに追加",
+                "names": "Bui Anh Dung & Dang Hoang Ngan"
+            }
+        };
+
         const container = document.getElementById("container");
         const playBtn = document.getElementById("play");
         const vid = document.getElementById("vid");
@@ -67,6 +82,12 @@
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop),
         });
+
+        if (params.lang && langs[params.lang]) {
+            for (const id in langs[params.lang]) {
+                document.getElementById(id).innerHTML = langs[params.lang][id];
+            }
+        }
 
         if (params.guest) {
             const guest = decodeURIComponent(escape(atob(params.guest)));
