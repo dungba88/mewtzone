@@ -6,7 +6,7 @@
     <div class="video-container" id="container">
         <div class="video-container-inner">
             <div class="frame"></div>
-            <div class="video-container-flip-item" id="flip-item">
+            <div class="video-container-flip-item flipped" id="flip-item">
                 <div class="video-container-box">
                     <video id="vid" poster="assets/images/thumbnail_1.png" playsinline>
                         <source src="https://github.com/dungba88/mewtzone/releases/download/video-1.0.0/wedding.mp4" type="video/mp4">
@@ -16,7 +16,7 @@
                 <div class="info">
                     <div style="margin: 0 auto">
                         <p>
-                            Kính mời Quý Anh/Chị đến dự tiệc cưới của
+                            Kính mời <span id="guest">Quý Anh/Chị</span> đến dự tiệc cưới của
                         </p>
                         <p class="names">
                             Bùi Anh Dũng & Đặng Hoàng Ngân
@@ -47,6 +47,15 @@
     <script type="text/javascript">
         const playBtn = document.getElementById("play");
         const vid = document.getElementById("vid");
+
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+
+        const guest = decodeURIComponent(escape(atob(params.guest)));
+        if (guest) {
+            document.getElementById("guest").innerHTML = guest;
+        }
 
         playBtn.addEventListener("click", (event) => {
             playBtn.classList.add("clicked");

@@ -22,10 +22,14 @@
 
 body {
     margin: 0;
+    background: #E6E8DF;
+    background-image: url(../images/background_5.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: bottom;
 }
 
 .video-container {
-    background: #E6E8DF;
     position: relative;
     text-align: center;
     width: 100%;
@@ -39,6 +43,7 @@ body {
     position: absolute;
     perspective: 1000px;
     margin: 0 auto;
+    background: rgba(230, 232, 223, 0.75);
 }
 
 .frame {
@@ -74,6 +79,10 @@ body {
     position: relative;
 }
 
+#guest {
+    color: darkred;
+}
+
 .info {
     width: 100%;
     height: 100%;
@@ -84,7 +93,7 @@ body {
     font-family: voll-korn;
     font-size: 20px;
     padding: 50px;
-    color: #8B937D;
+    color: rgb(104,110,94);
     display: flex;
     align-items: center;
     line-height: 2.5;
@@ -96,7 +105,7 @@ body {
     font-weight: bold;
     font-size: 30px;
     line-height: normal;
-    color: red;
+    color: darkred;
 }
 
 .info .action-items {
@@ -112,7 +121,7 @@ body {
 
 .button a {
     text-decoration: none;
-    color: #E2B392;
+    color: darkorange;
 }
 
 .play {
@@ -170,6 +179,13 @@ body {
         font-size: 40px;
         height: auto;
         top: auto;
+        padding: 100px 50px;
+    }
+
+    @media (min-height: 2000px) {
+        .info {
+            padding: 300px 50px;
+        }
     }
 
     .info .names {
@@ -185,6 +201,11 @@ body {
         font-size: 40px;
     }
 
+    body {
+        background-image: url(../images/background_5-portrait.jpg);
+        background-size: 100% auto;
+    }
+    
     .video-container-flip-item.flipped {
         transform: none;
     }
