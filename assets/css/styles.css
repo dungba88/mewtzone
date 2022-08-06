@@ -146,6 +146,7 @@ body {
     display: inline-block;
     max-height: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 @keyframes button-clicked {
