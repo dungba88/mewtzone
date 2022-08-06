@@ -53,10 +53,10 @@
             // request fullscreen in landscape mode
             if (window.innerHeight < window.innerWidth) {
                 document.getElementById("container").requestFullscreen();
+                vid.setAttribute("controls", "controls");
             }
             setTimeout(() => {
                 vid.play();
-                vid.setAttribute("controls","controls");
             }, 750);
         });
         vid.addEventListener("ended", (event) => {
