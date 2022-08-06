@@ -3,9 +3,7 @@
     <script src="https://www.math.uwaterloo.ca/~pkates/LT3/jsdemos/popcornjs/popcorn.js"></script>
 </html>
 <body>
-    <div class="main">
-    </div>
-    <div class="video-container">
+    <div class="video-container" id="container">
         <div class="video-container-inner">
             <div class="frame"></div>
             <div class="video-container-flip-item" id="flip-item">
@@ -53,10 +51,13 @@
         playBtn.addEventListener("click", (event) => {
             playBtn.classList.add("clicked");
             setTimeout(() => {
+                document.getElementById("container").requestFullscreen();
                 vid.play();
+                vid.setAttribute("controls","controls");
             }, 750);
         });
         vid.addEventListener("ended", (event) => {
+            vid.removeAttribute("controls");
             document.getElementById("flip-item").classList.add("flipped");
         });
     </script>
