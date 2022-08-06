@@ -49,15 +49,6 @@
         const playBtn = document.getElementById("play");
         const vid = document.getElementById("vid");
 
-        const params = new Proxy(new URLSearchParams(window.location.search), {
-            get: (searchParams, prop) => searchParams.get(prop),
-        });
-
-        const guest = decodeURIComponent(escape(atob(params.guest)));
-        if (guest) {
-            document.getElementById("guest").innerHTML = guest;
-        }
-
         playBtn.addEventListener("click", (event) => {
             playBtn.classList.add("clicked");
             // request fullscreen in landscape mode
@@ -72,5 +63,14 @@
         vid.addEventListener("ended", (event) => {
             document.getElementById("flip-item").classList.add("flipped");
         });
+
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+        });
+
+        if (params.guest) {
+            const guest = decodeURIComponent(escape(atob(params.guest)));
+            document.getElementById("guest").innerHTML = guest;
+        }
     </script>
 </body>
