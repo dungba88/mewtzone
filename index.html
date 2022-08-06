@@ -8,7 +8,7 @@
             <div class="frame"></div>
             <div class="video-container-flip-item" id="flip-item">
                 <div class="video-container-box">
-                    <video id="vid" poster="assets/images/thumbnail_1.png">
+                    <video id="vid" poster="assets/images/thumbnail_1.png" playsinline>
                         <source src="https://onedrive.live.com/download?cid=B16FC179C21FE084&resid=B16FC179C21FE084%215106&authkey=ADCbavLanfLytjw" type="video/mp4">
                     </video>
                     <img src="assets/images/play.webp" class="play" id="play">
@@ -53,10 +53,10 @@
             // request fullscreen in landscape mode
             if (window.innerHeight < window.innerWidth) {
                 document.getElementById("container").requestFullscreen();
-                vid.setAttribute("controls", "controls");
             }
             setTimeout(() => {
                 vid.play();
+                vid.setAttribute("controls", "controls");
             }, 750);
         });
         vid.addEventListener("ended", (event) => {
